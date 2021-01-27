@@ -7,17 +7,14 @@
 // @lc code=start
 class Solution {
     public void moveZeroes(int[] nums) {
-        for(int pivot=0; pivot<nums.length; ++pivot){
-            if(nums[pivot]==0){
-                for(int i=pivot+1;i<nums.length;++i){
-                    if(nums[i]!=0){
-                        int temp = nums[pivot];
-                        nums[pivot] = nums[i];
-                        nums[i] = temp;
-                        break;
-                    }
-                }
+        int pivot=0;
+        for(int num : nums){
+            if(num!=0){
+                nums[pivot++] = num;
             }
+        }
+        while(pivot < nums.length) {
+            nums[pivot++] = 0;
         }
     }
 }
