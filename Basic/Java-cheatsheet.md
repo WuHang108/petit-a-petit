@@ -14,6 +14,12 @@ Arrays.binarySearch(arr, obj)
 Arrays.fill(arr, -1);
 ```
 
+## java.util.Collections类
+将数组arr逆序反转：
+```java
+Collections.reverse(arr)
+```
+
 ## java.util.PriorityQueue类
 自定义比较
 ```java

@@ -1,4 +1,4 @@
-import java.util.HashSet;
+import java.util.Arrays;
 
 /*
  * @lc app=leetcode id=785 lang=java
@@ -8,39 +8,28 @@ import java.util.HashSet;
 
 // @lc code=start
 class Solution {
-    int[] parent;
-
-    int findParent(int i_point) {
-        if(parent[i_point] == i_point) return i_point;
-        return parent[i_point] = findParent(parent[i_point]);
-    }
-
     public boolean isBipartite(int[][] graph) {
-        int num_points = graph.length;
-        parent = new int[num_points];
-        for(int i=0; i<parent.length; ++i) {
-            parent[i] = i;
-        }
-        int modify = 0;
-        for(int i=0; i<num_points; ++i) {
-            parent[i] = findParent(i);
-            if(graph[i].length==0) {modify++;}
-            for(int j=1; j<graph[i].length; ++j) {
-                if(findParent(graph[i][j]) != findParent(graph[i][0])){
-                    parent[parent[graph[i][j]]] = parent[graph[i][0]];
-                }
+        int[] colors = new int[graph.length];
+        Arrays.fill(colors, -1);
+        for (int i = 0; i < graph.length; i++) {  // 处理图不是连通的情况
+            if (colors[i] == -1 && !isBipartite(i, 0, colors, graph)) {
+                return false;
             }
         }
-        for(int i=0; i<num_points; ++i) {
-            parent[i] = findParent(i);
+        return true;
+    }
+    
+    private boolean isBipartite(int curNode, int curColor, int[] colors, int[][] graph) {
+        if (colors[curNode] != -1) {
+            return colors[curNode] == curColor;
         }
-        // one or more parent
-        HashSet<Integer> hashSet = new HashSet<>();
-        for(int i=0; i<parent.length; ++i) {
-            hashSet.add(parent[i]);
+        colors[curNode] = curColor;
+        for (int nextNode : graph[curNode]) {
+            if (!isBipartite(nextNode, 1 - curColor, colors, graph)) {
+                return false;
+            }
         }
-        if(hashSet.size()-modify >= 2) return true;
-        return false;
+        return true;
     }
 }
 // @lc code=end
