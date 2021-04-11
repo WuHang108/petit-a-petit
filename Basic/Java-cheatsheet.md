@@ -36,3 +36,9 @@ PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<>() {
 ```java
 sc.next();
 ```
+
+## StringBuilder类
+增：append, insert
+删：delete
+改：setCharAt
+查：charAt
