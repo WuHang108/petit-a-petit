@@ -112,7 +112,7 @@ strokes, sans-serif fonts are sans (without) these strokes.
 \newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
 	% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
 	\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
-\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListStart}{\vspace{-4pt}\begin{itemize}}
 	\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %------------------------------------------------------------------------------
@@ -143,7 +143,7 @@ strokes, sans-serif fonts are sans (without) these strokes.
 		% \scshape sets small capital letters, remove if desired
 		\small{(+86) 159-3536-6489} \\
 		\small{邮箱: \href{mailto:wuhang@xs.ustb.edu.cn}{\underline{wuhang@xs.ustb.edu.cn}}}\\
-		\small{期望职位：测试开发实习生} \\
+		\small{期望职位：测试开发工程师} \\
 		\small{期望地点：北京/杭州} \\
 	\end{minipage}
 	
@@ -202,11 +202,50 @@ strokes, sans-serif fonts are sans (without) these strokes.
 	use item list as is shown in the work experience section.
 	\end{comment}
 	
+	\section{实习经历}
+	\CVSubHeadingListStart
+	\CVSubheading
+	{{美团到店—花椒业务部}  $|$ \emph{\small{测试开发实习生}}}{2021.05 -- 至今}
+	{主要负责美团圈圈小程序商品\&交易测试}{}
+	\CVItemListStart
+	\CVItem{开城需求用例编写\&测试}
+	\CVItem{优惠券用例编写\&测试}
+	\CVItem{已售罄商详页用例编写\&测试}
+	\CVItem{新人礼包用例编写\&测试}
+	\CVItem{门票日历模式用例编写\&测试}
+	\CVItem{好友助力用例编写\&测试}
+	\CVItemListEnd
+	
+	\CVSubHeadingListEnd
+	
+	\section{科研经历}
+	\CVSubHeadingListStart
+	\CVSubheading
+	{\small\textbf{Constrained Gaussian Condensation Filter for Cooperative Target Tracking} }{2020.7 -- 2021.1}
+	{\makecell[l]{基于时空约束高斯聚合滤波的协同运动追踪。提出一种基于时空约束高斯聚合滤波的多目标协\\
+			同追踪法，完成空间约束优化时序滤波估计的位置信息。}}{}
+	\CVItemListStart
+	\CVItem{\textit{IEEE Internet of Things Journal}(SCI一区, IF=9.471), \href{https://doi.org/10.1109/JIOT.2021.3088297}{\underline{doi: 10.1109/JIOT.2021.3088297}}}
+	\CVItemListEnd
+	
+	\CVSubheading
+	{\small\textbf{Toward Swarm Robots Tracking: A Constrained Gaussian Condensation Filter}} {2021.3 -- 2021.5}
+	{\makecell[l]{针对目标追踪存在的累计误差问题，根据IMU预估中心以及置信规模，建立误差椭圆，实现\\
+			基于采样点几何位置的重采样算法。通过对不同等级的采样点进行筛选与复制操作，有效抑制\\
+			了IMU累计误差影响。}}{}
+	
+	\CVSubheading
+	{面向自组织局部云的多机器人协作环境态势感知 $|$ \emph{\small{专利}}}{2019.12 -- 2020.04}
+	{\makecell[l]{构建基于角色的多智能体协同模型体系，建立多智能体间通用的分布式自适应的协同任务\\
+			处理机制。研究基于角色的多智能任务协同消息传递及异常处理机制。}}{}
+	
+	\CVSubHeadingListEnd
+	
 	\section{项目经历}
 	\CVSubHeadingListStart
 	\CVSubheading
 	{{趣味强化学习实验平台}  $|$ \emph{\small{Python}}}{2020.03 -- 2020.05}
-	{以空战小游戏为背景，开展不稳定环境集群任务协同实验}{}
+	{以空战小游戏为背景，开展不稳定环境集群任务协同实验。}{}
 	\CVItemListStart
 	\CVItem{不同角色Agent协同作战，验证多Agent协同框架}
 	\CVItem{采用黑板模式进行Agent之间的通信}
@@ -246,28 +285,6 @@ strokes, sans-serif fonts are sans (without) these strokes.
 	are seeking
 	\end{comment}
 	
-	\section{科研经历}
-	\CVSubHeadingListStart
-	%    \CVSubheading %Example
-	%      {What you did}{When you worked there}
-	%      {Who you worked for}{Where they are located}
-	%      \CVItemListStart
-	%        \CVItem{Why it is important to this employer}
-	%      \CVItemListEnd
-	\CVSubheading
-	{不稳定环境集群任务协同架构 $|$ \emph{\small{专利}}}{2019.12 -- 2020.04}
-	{\makecell[l]{\hspace{2em}构建基于角色的多智能体协同模型体系，建立多智能体间通用的分布式自适应的协同任务\\
-		处理机制。研究基于角色的多智能任务协同消息传递及异常处理机制}}{}
-	\CVSubheading
-	{\small\textbf{Toward Swarm Robots Tracking: A Constrained Gaussian Condensation Filter}}{2021.3 -- 2021.5}
-	{\makecell[l]{\hspace{2em}针对目标追踪存在的累计误差问题，根据IMU预估中心以及置信规模，建立误差椭圆，实\\
-	现基于采样点几何位置的重采样算法。通过对不同等级的采样点进行筛选与复制操作，有效抑制\\
-	了IMU累计误差影响。}}{}
-	\CVSubheading
-	{\small\textbf{Constrained Gaussian Condensation Filter for Cooperative Target Tracking} }{2020.7 -- 2021.1}
-	{\makecell[l]{\hspace{2em}基于时空约束高斯聚合滤波的协同运动追踪，提出一种基于时空约束高斯聚合滤波的多目标\\
-			协同追踪算法，完成空间约束优化时序滤波估计的位置信息。(\textbf{SCI二区在投})}}{}
-	\CVSubHeadingListEnd
 	
 	
 	%-----CONFERENCES AND PRESENTATIONS--------------------------------------------
