@@ -1,4 +1,4 @@
-#include "basic_input.h"
+#include "../basic_input.h"
 
 int solution(int N) {
     int ans = 0;

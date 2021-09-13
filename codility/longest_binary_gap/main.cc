@@ -1,4 +1,3 @@
-#include "basic_input.h"
 #include "solution.hpp"
 
 int main() {
