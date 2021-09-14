@@ -12,10 +12,15 @@ void printVector(std::vector<int> vec) {
     }
 }
 
-bool read_specific(char c, size_t* pi) {
-    if(read_buffer[(*pi)++] != c) {
+/**
+ * read single character
+ * 读取失败不跳步
+ */
+bool read_specific(char c, size_t* p_i) {
+    if(read_buffer[*p_i] != c) {
 	return false;
     }
+    (*p_i)++;
 #ifdef DEBUG
     printf("read %c ok\n", c);
 #endif
@@ -43,15 +48,22 @@ int int_len(int n) {
     return len;
 }
 
+/**
+ * read int number
+ */
 bool read_int(int* p_num, size_t* p_i) {
+    // jump non-number character
+    if(! isdigit(read_buffer[*p_i]) && read_buffer[*p_i]!='-') {
+        (*p_i)++;
+    }
     int num = sscanf(read_buffer+(*p_i), "%d", p_num);
-#ifdef DEBUG
-    printf("read %d number: %d\n", num, *p_num);
-#endif
     *p_i += int_len(*p_num);
     return num > 0;
 }
 
+/**
+ * read into vector<int>
+ */
 bool readIntVector(std::vector<int>& vec, size_t* p_i) {
     vec.clear();
     size_t len = strlen(read_buffer);
@@ -66,6 +78,25 @@ bool readIntVector(std::vector<int>& vec, size_t* p_i) {
 	    break;
 	vec.push_back(item);
     };
+    (*p_i)++;
+    return true;
+}
+
+/**
+ * read into vector<vector<int>>
+ */
+bool read_double_vector_int(std::vector<std::vector<int>>& mat, size_t* p_i) {
+    if(! read_specific('[', p_i)) {
+        return false;
+    }
+    while(read_buffer[*p_i] != ']') {
+        std::vector<int> row;
+        if(! readIntVector(row, p_i)) {
+            return false;
+        }
+        mat.push_back(row);
+        read_specific(',', p_i);
+    }
     (*p_i)++;
     return true;
 }
