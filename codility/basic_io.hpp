@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define nl putchar('\n')
 #define BUFFER_SIZE 1024
 char read_buffer[BUFFER_SIZE];
 
@@ -96,6 +97,19 @@ bool read_double_vector_int(std::vector<std::vector<int>>& mat, size_t* p_i) {
         }
         mat.push_back(row);
         read_specific(',', p_i);
+    }
+    (*p_i)++;
+    return true;
+}
+
+bool read_string(std::string& S, size_t* p_i) {
+    if(! (read_buffer[*p_i]=='\'')||(read_buffer[*p_i]=='"')) {
+        return false;
+    }
+    (*p_i)++;
+    while(read_buffer[*p_i] != '\'' && read_buffer[*p_i] != '"') {
+        S.push_back(read_buffer[*p_i]);
+        (*p_i)++;
     }
     (*p_i)++;
     return true;
