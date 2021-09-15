@@ -6,7 +6,7 @@ int main() {
         size_t i = 0;
         /* code starts from here */
         vector<int> H;
-        readIntVector(H, &i);
+        read_vector_int(H, &i);
         int ans = solution(H);
         printf("%d\n", ans);
     }

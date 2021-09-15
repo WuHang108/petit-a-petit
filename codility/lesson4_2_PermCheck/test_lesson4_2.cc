@@ -7,7 +7,7 @@ int main() {
         /* code starts from here */
         
         vector<int> input;
-        readIntVector(input, &i);
+        read_vector_int(input, &i);
         int ans = solution(input);
         printf("is permutation? %s\n", ans==1?"true":"false");
     }

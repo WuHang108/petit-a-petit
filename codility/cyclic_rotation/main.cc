@@ -10,7 +10,7 @@ int main() {
 	if(!read_specific('(', &i)) {
 	    break;
 	}
-	if(!readIntVector(A, &i))
+	if(!read_vector_int(A, &i))
 	    break;
 	if(!read_specific(',', &i))
 	    break;

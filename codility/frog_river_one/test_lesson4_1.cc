@@ -11,7 +11,7 @@ int main() {
         read_int(&X, &i);
         read_specific(',', &i);
         vector<int> input;
-        readIntVector(input, &i);
+        read_vector_int(input, &i);
         int ans = solution(X, input);
         printf("earliest time = %d\n", ans);
     }

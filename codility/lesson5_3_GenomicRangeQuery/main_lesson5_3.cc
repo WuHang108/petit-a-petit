@@ -10,10 +10,10 @@ int main() {
         read_string(S, &i);
         read_specific(',', &i);
         vector<int> P;
-        readIntVector(P, &i);
+        read_vector_int(P, &i);
         read_specific(',', &i);
         vector<int> Q;
-        readIntVector(Q, &i);
+        read_vector_int(Q, &i);
         vector<int> ans = solution(S, P, Q);
         for(int n : ans) {
             printf("%d,", n);

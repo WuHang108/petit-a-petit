@@ -1,4 +1,4 @@
-#include "lesson6_4.hpp"
+#include "lesson8_2.hpp"
 
 int main() {
     while(fgets(read_buffer, BUFFER_SIZE, stdin) != NULL) {
@@ -8,7 +8,7 @@ int main() {
         vector<int> A;
         read_vector_int(A, &i);
         int ans = solution(A);
-        printf("pairs=%d\n", ans);
+        printf("num of equi leaders=%d\n", ans);
     }
     return 0;
 }

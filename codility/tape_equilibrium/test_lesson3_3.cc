@@ -6,7 +6,7 @@ int main() {
         size_t i = 0;
         /* code starts from here */
         vector<int> input;
-        readIntVector(input, &i);
+        read_vector_int(input, &i);
         int ans = solution(input);
         printf("minimal difference = %d\n", ans);
     }

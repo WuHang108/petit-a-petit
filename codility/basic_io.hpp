@@ -29,20 +29,9 @@ bool read_specific(char c, size_t* p_i) {
 }
 
 int int_len(int n) {
-    int len = 0;
-#ifdef DEBUG
-    printf("len(%d)", n);
-#endif
-    if (n < 0) {
-	n = -n;
-	++len;
-    } else if(n == 0) {
-	len = 1;
-    }
-    while(n > 0) {
-	n /= 10;
-	++len;
-    }
+    char str[12] = {0};
+    sprintf(str, "%ld", n);
+    int len = strlen(str);
 #ifdef DEBUG
     printf("=%d\n", len);
 #endif
@@ -54,7 +43,7 @@ int int_len(int n) {
  */
 bool read_int(int* p_num, size_t* p_i) {
     // jump non-number character
-    if(! isdigit(read_buffer[*p_i]) && read_buffer[*p_i]!='-') {
+    if(!(isdigit(read_buffer[*p_i])||read_buffer[*p_i]=='-')) {
         (*p_i)++;
     }
     int num = sscanf(read_buffer+(*p_i), "%d", p_num);
@@ -65,7 +54,7 @@ bool read_int(int* p_num, size_t* p_i) {
 /**
  * read into vector<int>
  */
-bool readIntVector(std::vector<int>& vec, size_t* p_i) {
+bool read_vector_int(std::vector<int>& vec, size_t* p_i) {
     vec.clear();
     size_t len = strlen(read_buffer);
     if(!read_specific('[', p_i)) {
@@ -92,7 +81,7 @@ bool read_double_vector_int(std::vector<std::vector<int>>& mat, size_t* p_i) {
     }
     while(read_buffer[*p_i] != ']') {
         std::vector<int> row;
-        if(! readIntVector(row, p_i)) {
+        if(! read_vector_int(row, p_i)) {
             return false;
         }
         mat.push_back(row);

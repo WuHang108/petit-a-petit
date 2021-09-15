@@ -6,7 +6,7 @@ int main() {
         size_t i = 0;
         /* code starts from here */
         vector<int> A;
-        readIntVector(A, &i);
+        read_vector_int(A, &i);
         int ans = solution(A);
         printf("min index=%d\n", ans);
     }

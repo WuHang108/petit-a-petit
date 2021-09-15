@@ -10,7 +10,7 @@ int main() {
         read_int(&N, &i);
         read_specific(',', &i);
         vector<int> input;
-        readIntVector(input, &i);
+        read_vector_int(input, &i);
         vector<int> ans = solution(N, input);
         for(int v : ans) {
             printf("%d,", v);

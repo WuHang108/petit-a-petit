@@ -7,10 +7,10 @@ int main() {
         /* code starts from here */
         read_specific('(', &i);
         std::vector<int> A;
-        readIntVector(A, &i);
+        read_vector_int(A, &i);
         read_specific(',', &i);
         std::vector<int> B;
-        readIntVector(B, &i);
+        read_vector_int(B, &i);
         int ans = solution(A, B);
         printf("living fishes: %d\n", ans);
     }
