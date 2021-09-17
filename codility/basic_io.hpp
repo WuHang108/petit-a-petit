@@ -30,7 +30,7 @@ bool read_specific(char c, size_t* p_i) {
 
 int int_len(int n) {
     char str[12] = {0};
-    sprintf(str, "%ld", n);
+    sprintf(str, "%d", n);
     int len = strlen(str);
 #ifdef DEBUG
     printf("=%d\n", len);
