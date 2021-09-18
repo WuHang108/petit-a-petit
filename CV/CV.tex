@@ -12,7 +12,8 @@
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -75,10 +76,12 @@ strokes, sans-serif fonts are sans (without) these strokes.
 \raggedright
 \setlength{\tabcolsep}{0cm}
 
+\definecolor{titleblue}{HTML}{4a7aa4}
+
 % Sections formatting
 \titleformat{\section}{
-	\vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+	\vspace{-4pt}\sffamily\scshape\raggedright\large\color{titleblue}
+}{}{0em}{}[\color{titleblue}{\titlerule[1.7pt]} \vspace{-5pt}]
 
 % Ensure that .pdf is machine readable/ATS parsable
 %\pdfgentounicode=1
