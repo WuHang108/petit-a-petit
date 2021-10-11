@@ -1,0 +1,6 @@
+aaBabcDaA
+Codility
+WeTestCodeErs
+"MaybeEasy"
+"z"
+"helloworld"
